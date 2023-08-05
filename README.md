@@ -52,4 +52,7 @@ Oluştur Oku Düzenle Sil
 
 - Note'ların Listeleneceği bir `ul ` oluşturun
 - - `notes` dizisindeki her bir eleman içerini `li` basın ve note'un değerini girin (map)
-# CRUD_App
+# Screen
+![](React-App.gif)
+
+

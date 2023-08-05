@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# Crud App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Create Read Update Delete
+Oluştur Oku Düzenle Sil
 
-## Available Scripts
+- 1 Form içerisinde gelen verileri al ve state'e aktar.
+- - Ekle butonuna tıklanılınca formdan gelen kitap ismiyle beraber yeni bir obje oluşturulucak
+- - Değerleri: Eklenme Tarihi | Kitap İsmi | id | okunduMu
+- - Oluşan objeyi kitaplar isminde bnir diziyi tutan state'e aktar
+- - Son aşamada inputu temizle
 
-In the project directory, you can run:
+- 2 books Stateinde tutulan kitapları al ve map methodu ile listele(ekrana bas)
+- - eğer state boşsa ekrana "henüz kitap eklenmedi" yaz
+- - BookCard bileşenine kitap bilgilerini prop olrak gönder
+- - BookCard bileşenin kitapla iligli bütün özellikleri göster
 
-### `npm start`
+- 3 Kitap Silme:
+- - herhangi bir kitabın sil butonun basıldığında
+- - fonk. çalıştır ve silincek elemanın id'sini gönder `handleModal(id)`
+- - bir onay modal'ı aç:
+- - vacgeçe tıklanırsa kapat `setShowModal(false)`
+- - onaylanırsa silincek id'ye eşit olmaynlarla yeni bir dizi oluştur
+- - oluşan yeni diziye state'e aktar `handleDelete()`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 4 Okundu olarak işaretle:
+- - okundu butonuna tılanılınca çalışan fonk. kitab değerlerini gönder
+- - kitab isRead değerini tersine çevir
+- - dizi içerinde değişicek elemanı bul
+- - değişecek elemanı çıkar yerine güncel halini ekle
+- - state'i güncelle
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- 5 Düzenle İşlemini Yap:
+- - Düzenle butonuan tıklanıdlığında bir fonk. çalışsın
+- - Fonk. düzenlenecek kitabı state'e aktarsın ve modal'ı açsın
+- - Modalda: Kitap ismini değiştirmek için bir input olsun (value'su kitabın ismi olucak)
+- - Input her değiştiğinde düznlenicek elemanı tutuğun state'i güncelle
+- - Vazgeç butonu: > Modal'ı kapatır
+- - Kaydet Butonu: > `handleEditBook` fonk. çalıştırsın
+- - çalışan fonk. kitaplar dizisni güncellesin (eski elemanı çıkarıp güncel halini koysun)
+- - gğncellerken isim ve date'i değiştir
 
-### `npm test`
+- - Note Uygulaması
+- Bütün kodlar app.js'de yazılsın
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Form Oluşturun
+- - inputun içeresine yazılan değer state'de tutulmalı `text`
+- - useState yardımyla bütün notlar bir dizi halinde tutulmalı `notes[]`
+- - Ekle butonuna tıklanılınca ekleme fonk. çalışsın
+- - Fonksiyon: text state 'inde tuttuğunuz değeri diğer notların yanında göndersin
+- - `text` değeri boş ise ekleme fonksiyonu çalışmasın ve alert versin
+- - inputu temizleyin (value unutulmasın)
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Note'ların Listeleneceği bir `ul ` oluşturun
+- - `notes` dizisindeki her bir eleman içerini `li` basın ve note'un değerini girin (map)
+# CRUD_App
